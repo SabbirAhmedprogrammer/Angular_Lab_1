@@ -1,0 +1,30 @@
+<div class="div-component">
+
+    <h1>TODO List</h1>
+    <p>A place to store your todos</p>
+
+    <form class="filter-form">
+        <!-- <label for="filter-input">Testing</label> -->
+        <input type="text" id="filter-input" name="" placeholder="filter your todos" class="input-styles" />
+    </form>
+    <ol class="list">
+
+        <li class="list-item" *ngFor="let todo of todos">
+            <div class="big-container">
+                <!-- so ngIf is saying that if todo.completed is false, then the BUTTON does show.  -->
+                <button class="comp-button" *ngIf="!todo.completed">Complete</button>
+                <div class="little-container">
+                    <p class="task-line" [class.done]="todo.completed">{{todo.task}}</p>
+                    <button class="x-button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </li>
+
+    </ol>
+    <form class="filter-form">
+        <!-- <label for="add-input">Testing</label> -->
+        <input type="text" id="add-input" name="" placeholder="Add your todos" class="input-styles" />
+        <button class="add-button">Add</button>
+    </form>
+
+</div>
